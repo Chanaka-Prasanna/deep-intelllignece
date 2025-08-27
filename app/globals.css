@@ -292,6 +292,23 @@
       @apply text-sm font-semibold capitalize;
     }
   }
+
+  .nav-link {
+    @apply text-light-100 hover:text-primary-200 transition-colors duration-300 font-medium text-sm relative;
+  }
+
+  .nav-link.active {
+    @apply text-primary-200;
+  }
+
+  .nav-link::after {
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary-200 transition-all duration-300 content-[''];
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    @apply w-full;
+  }
 }
 
 @utility dark-gradient {
